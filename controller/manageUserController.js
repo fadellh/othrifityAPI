@@ -12,7 +12,7 @@ module.exports = {
         on u.statusId=us.id_status`
         
         if(!orderBy&!filterBy1&!search&!filterBy2){
-            sql += ` group by t.userId limit 10`
+            sql += ` group by t.userId`
         }
         if(filterBy1){
             sql += ` where ${filterBy1} = ${filterParam1}`
@@ -28,7 +28,7 @@ module.exports = {
         }
         
         if(orderBy){
-            sql += ` order by ${orderBy} ${sort} limit 10` 
+            sql += ` order by ${orderBy} ${sort}` 
         }
 
         try{ 
